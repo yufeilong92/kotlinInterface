@@ -71,4 +71,5 @@ class RlvAdapter(var mContext: Context, var data: MutableList<String>) :
         this.getData = mlist
     }
 
+
 }
