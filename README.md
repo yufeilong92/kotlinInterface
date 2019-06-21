@@ -104,5 +104,16 @@ val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数
             "222"
         }
     }
-
+      //与let函数相似，区别是also执行完成后返回对象本身,let返回处理结果
+        fun initAlso(){
+            var mlist= mutableListOf<String>()
+            for(index in 0..20){
+                mlist.add("测试"+index)
+            }
+            mlist.also {
+                for (item in mlist){
+                    println(item)
+                }
+            }
+        }
 ```

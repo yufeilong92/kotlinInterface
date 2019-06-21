@@ -27,5 +27,6 @@ class ExampleUnitTest {
         }
        var con= data.initOpen("测试护士")
         println(con)
+        data.initAlso()
     }
 }
