@@ -14,7 +14,7 @@
                  Toast.makeText(this@MainActivity,"请求失败",Toast.LENGTH_SHORT).show()
              }
   ```
-  ##2.方法有参无返回值回调
+  ## 2.方法有参无返回值回调
   ```
   //(1)声明回调接口，以及初始化
    private var onUpdataListener: ((index: Int, str: String) -> Unit)? = null
@@ -30,7 +30,7 @@
                   Log.e("22","=="+str)
               }
 ```
-##3.方法有参有返回值回调
+## 3.方法有参有返回值回调
 ```
 //1)接口声明，以及初始化
  private var getData: ((index: Int, str: String) -> Int)? = null
