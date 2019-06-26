@@ -44,7 +44,8 @@ class RlvAdapter(var mContext: Context, var data: MutableList<String>) :
             onUpdataListener?.invoke(2, data[position])
             setDataLisener?.invoke()
             val invoke = getData?.invoke(position, data[position])
-            Log.e("222",""+invoke)
+            Log.e("222", "" + invoke)
+
         }
 
     }
@@ -70,6 +71,8 @@ class RlvAdapter(var mContext: Context, var data: MutableList<String>) :
     fun getDataContent(mlist: (index: Int, str: String) -> Int) {
         this.getData = mlist
     }
+
+
 
 
 }

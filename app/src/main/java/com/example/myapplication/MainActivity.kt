@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         rlv_content.adapter = adapter
         adapter.setOnUpDateListener { index, str ->
             Log.e("22","=="+str)
+            val intent=Intent(this@MainActivity,Main2Activity::class.java)
+            startActivity(intent)
         }
         adapter.setDateListener {
             Toast.makeText(this@MainActivity,"请求失败",Toast.LENGTH_SHORT).show()
