@@ -19,8 +19,7 @@ class TextOne {
     //run即可作用于Any，又可作为this代码块，run返回执行的是处理结果
     fun initData(str: String?) {
         str?.run {
-            var con = this.replace("2", "3")
-            println(con)
+            this.replace("2", "3")
         }
     }
 
@@ -29,7 +28,8 @@ class TextOne {
     fun initPserson(str: String?): String? {
         return str?.apply {
             var con = this.replace("3", "你")
-
+            println(con)
+            println(this)
         }
     }
 
@@ -44,6 +44,7 @@ class TextOne {
             this.add("小死")
         }
     }
+
     //let内部使用it指代当前对象，返回最后一行处理结果， (T) -> R
     fun initOpen(str: String?): Any? {
         return str?.let {
@@ -51,30 +52,31 @@ class TextOne {
             it.drop(2)
         }
     }
+
     //with函数作用于一个对象，返回最后一行处理结果
-    fun initWith(str: String?):String?{
+    fun initWith(str: String?): String? {
         //写法一,对象receiver和一个lambda函数块
-        return  with(str,{
+        return with(str, {
             "222"
         })
         //由于with函数最后一个参数是一个函数，可以把函数提到圆括号的外部修改后
-        return with(str){
+        return with(str) {
             "222"
         }
     }
+
     //与let函数相似，区别是also执行完成后返回对象本身,let返回处理结果
-    fun initAlso(){
-        var mlist= mutableListOf<String>()
-        for(index in 0..20){
-            mlist.add("测试"+index)
+    fun initAlso() {
+        var mlist = mutableListOf<String>()
+        for (index in 0..20) {
+            mlist.add("测试" + index)
         }
         mlist.also {
-            for (item in mlist){
+            for (item in mlist) {
                 println(item)
             }
         }
     }
-
 
 
 }

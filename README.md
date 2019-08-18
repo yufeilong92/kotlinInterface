@@ -65,15 +65,28 @@ val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数
             println(con)
         }
     }
+    ```
+           data.initData("123456789")
+    返回    133456789
+    ```
 
     // apply用法类似run，区别在于apply执行完成block()函数后，返回自身对象
 // 返回自身对象，可以使用链式方法使用.apply{}.apply{}
     fun initPserson(str: String?): String? {
         return str?.apply {
             var con = this.replace("3", "你")
-
+            println(con)
+            println(this)
         }
     }
+        ```
+           12你456789
+           123456789
+            data.initPserson("123456789")
+            println(pserson)
+         返回 123456789
+        ```
+
 
     // apply用法类似run，区别在于apply执行完成block()函数后，返回自身对象
 // 返回自身对象，可以使用链式方法使用.apply{}.apply{}
@@ -86,6 +99,12 @@ val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数
             this.add("小死")
         }
     }
+    ```
+            val pserson = data.initListData(mutableListOf())
+            println(pserson)
+    返回 [小明, 小红, 小李, 小米, 小死]
+    ```
+
     //let内部使用it指代当前对象，返回最后一行处理结果， (T) -> R
     fun initOpen(str: String?): Any? {
         return str?.let {
@@ -93,6 +112,11 @@ val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数
             it.drop(2)
         }
     }
+    ```
+            val pserson = data.initOpen("13452")
+            println(pserson)
+       返回   452
+    ```
     //with函数作用于一个对象，返回最后一行处理结果
     fun initWith(str: String?):String?{
         //写法一,对象receiver和一个lambda函数块
@@ -104,6 +128,12 @@ val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数
             "222"
         }
     }
+
+    ```
+    val pserson = data.initWith("13452")
+        println(pserson)
+     返回  222
+    ```
       //与let函数相似，区别是also执行完成后返回对象本身,let返回处理结果
         fun initAlso(){
             var mlist= mutableListOf<String>()
@@ -116,4 +146,29 @@ val/var 变量名 = { 参数1 ： 类型，参数2 : 类型, ... -> 操作参数
                 }
             }
         }
+
+        ```
+
+测试0
+测试1
+测试2
+测试3
+测试4
+测试5
+测试6
+测试7
+测试8
+测试9
+测试10
+测试11
+测试12
+测试13
+测试14
+测试15
+测试16
+测试17
+测试18
+测试19
+测试20
+        ```
 ```
